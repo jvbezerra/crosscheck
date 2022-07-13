@@ -2,6 +2,7 @@ export type Fact = {
   title: string,
   link: string,
   displayLink: string,
+  snippet: string,
 }
 
 export async function getFacts(fake: string): Promise<Fact> {

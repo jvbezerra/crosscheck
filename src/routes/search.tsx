@@ -1,5 +1,7 @@
 import type { LoaderFunction, MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
+import FactItem from '~/components/FactItem';
+import type { Fact } from '~/models/facts.server';
 import { getFacts } from '~/models/facts.server';
 
 export const loader: LoaderFunction = async ({request }) => {
@@ -15,9 +17,10 @@ export const meta: MetaFunction = ({ data }) => ({
 });
 
 export default function Search() {
-  const { facts } = useLoaderData();
+  const { facts = [] } = useLoaderData();
   return (
     <div className="w-full h-full mt-8">
+      {facts.map((fact: Fact, idx: React.Key) => <FactItem key={idx} fact={fact}/>)}
     </div>
   )
 }
