@@ -8,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import Icon from './components/Icon';
 import styles from "./tailwind.css"
 
 export function links() {
@@ -40,13 +41,11 @@ export default function App() {
               placeholder="Pesquise a fake news do dia..."
             />
             <button className="bg-black text-white grid place-items-center">
-              <span className="material-symbols-outlined">
-                search
-              </span>
+              <Icon>search</Icon>
             </button>
           </Form>
         </header>
-        <main>
+        <main className="overflow-auto">
           <Outlet/>
         </main>
         <ScrollRestoration />
