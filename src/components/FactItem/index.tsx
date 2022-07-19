@@ -21,6 +21,10 @@ const LogoSchema: Record<string, { style: string, path: string }> = {
     style: 'w-10 h-fit',
     path: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Logotipo_g1.svg/204px-Logotipo_g1.svg.png'
   },
+  'checamos.afp.com' : {
+    style: 'w-16',
+    path: 'https://checamos.afp.com/sites/all/themes/custom/afpblog/v2/assets/img/Logo_AFP.svg'
+  },
 }
 
 export default function FactItem ({ fact }: Props) {
